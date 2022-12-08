@@ -146,3 +146,25 @@
 // Använd ternary operator för att ändra texten på ett h1-element till följande
 // om input-numret är lika med random: ‘RÄTT’
 // annars: ‘FEL’
+
+let button = document.getElementById("button");
+let header = document.createElement("h1");
+const randomNumber = Math.ceil(Math.random() * 10);
+header.innerHTML = `Hello`;
+document.body.appendChild(header);
+
+button.addEventListener("click", (e) => {
+  e.preventDefault();
+  letsGuessTheNumber();
+});
+
+function letsGuessTheNumber() {
+  let input = Number(document.getElementById("input").value);
+  const randomNumber = Math.ceil(Math.random() * 3);
+
+  input === randomNumber
+    ? (header.innerHTML = `RÄTT`)
+    : (header.innerHTML = `FEL`);
+
+  console.log(randomNumber);
+}
